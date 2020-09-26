@@ -1,0 +1,142 @@
+@import "./globalVar";
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.wrapper {
+
+  padding: 70px 3% 0;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #3d1616;
+}
+img {
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+.welcome {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+}
+.end {
+  text-align: center;
+}
+.notFound {
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 14px;
+  h2 {
+    margin-bottom: 10px;
+  }
+  a {
+    font-weight: 700;
+    padding: 8px;
+    color: $darkRed;
+    &:hover {
+      color: black;
+    }
+  }
+}
+.enterPage {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100vw;
+  font-family: "Poppins";
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 70;
+  .nav-page {
+
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    h1 {
+      font-size: 22px;
+      color:black;
+      text-transform: uppercase;
+    }
+    .welcome-btn {
+      padding: 8px 22px;
+      margin-top: 15px;
+      border: 1px solid $bgc-item;
+      background-color: transparent;
+      color: black;
+      font-weight: 700;
+      border-radius: 6px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      &:hover {
+        background-color: #000;
+        border-color: #e2dfdf;
+        color: $bgc-item;
+      }
+    }
+  }
+}
+footer {
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  background-color: #f8f4f4;
+  border: 1px solid #00000046;
+  font-family: "Poppins";
+  font-size: 15px;
+}
+@media (min-width: 768px) {
+  .wrapper {
+
+    padding: 80px 3% 0;
+  }
+  .notFound {
+    font-size: 18px;
+  }
+  .welcome {
+    font-size: 40px;
+    margin-bottom: 25px;
+    padding: 10px 0;
+  }
+
+  .enterPage {
+    .nav-page {
+      position: absolute;
+      top:0;
+      padding: 30px;
+      width: 70%;
+      h1 {
+        font-size: 50px;
+        display: inline-block;
+        &:first-child {
+          margin-right: 10px;
+        }
+      }
+      a {
+        display: block;
+      }
+      .welcome-btn {
+        padding: 10px 30px;
+        font-size: 25px;
+      }
+    }
+  }
+  footer {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
