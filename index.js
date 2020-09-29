@@ -7,7 +7,7 @@ const dotenv = require('dotenv')
 
 dotenv.config()
 
-const port = 5500
+const port = 5000
 //Import routes
 
 mongoose.set('useFindAndModify', false)

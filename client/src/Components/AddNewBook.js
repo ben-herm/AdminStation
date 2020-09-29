@@ -9,6 +9,17 @@ import {
 } from '../Components/redux/actions/booksActions'
 import { addBookToDB, getData } from '../api/booksApi'
 import { Link } from 'react-router-dom'
+
+const Wrapper = ({ childStyle, children, ...viewProps }) => (
+  <div {...viewProps}>
+    {React.Children.map(children, child =>
+      React.cloneElement(child, {
+        style: [child.props.style, childStyle]
+      })
+    )}
+  </div>
+)
+
 const AddNewBook = ({ value, showAddBook }) => {
   const dispatch = useDispatch()
   const [data, setBookData] = useState({
@@ -71,64 +82,89 @@ const AddNewBook = ({ value, showAddBook }) => {
         onClick={() => showAddBook(true)}
         className='secondary-btn btn-add-book'
       >
-        Add new book to a database
+        Add new customer to the database
       </button>
       {value && (
         <div className='show-modal'>
           <div>
             <form onSubmit={handleSubmit} className='cms-form'>
-              <Link to='/list'>Watch all books</Link>
               <div className='close' onClick={() => showAddBook(false)}>
                 <i className='far fa-times-circle'></i>
               </div>
-              <label>Author</label>
+              <label>כתובת</label>
               <input
                 type='text'
-                value={data.author}
-                name='author'
+                value={data.adress}
+                name='adress'
                 onChange={handleCmsValue}
               />
-              <label>Title</label>
+              <label>סוג נכס</label>
               <input
                 type='text'
                 value={data.title}
-                name='title'
+                name='assetType'
                 onChange={handleCmsValue}
               />
-              <label>Cover</label>
-              <input type='file' name='cover' onChange={handleCmsValue} />
-              <label>Pages</label>
-              <input
-                type='number'
-                value={data.pages}
-                name='pages'
-                onChange={handleCmsValue}
-              />
-              <label>Description</label>
+              <label>תמונות</label>
+              <input type='file' name='image' onChange={handleCmsValue} />
+              <label>מחיר</label>
               <textarea
-                name='desc'
-                value={data.desc}
+                name='price'
+                value={data.price}
                 onChange={handleCmsValue}
               ></textarea>
-              <label>Print</label>
+              <label>חדרים</label>
+              <input
+                type='rooms'
+                value={data.rooms}
+                name='rooms'
+                onChange={handleCmsValue}
+              />
+              <label>מ״ר</label>
               <input
                 type='text'
-                value={data.print}
-                name='print'
+                value={data.sqrFeet}
+                name='sqrFeet'
                 onChange={handleCmsValue}
               />
-              <label>Price</label>
+              <label>קומה</label>
               <input
-                type='number'
-                value={data.price}
-                name='price'
+                type='text'
+                value={data.floor}
+                name='floor'
                 onChange={handleCmsValue}
               />
-              <label>Publishing date</label>
+
+              <Wrapper
+                style={{ flexDirection: 'row' }}
+                childStyle={{ margin: 8 }}
+              >
+                <label>מיזוג</label>
+                <input
+                  type='checkbox'
+                  value={true}
+                  name='airCondition'
+                  onChange={handleCmsValue}
+                />
+                <label>מעלית</label>
+                <input
+                  type='checkbox'
+                  value={true}
+                  name='elevator'
+                  onChange={handleCmsValue}
+                />
+                <label>ריהוט</label>
+                <input
+                  type='checkbox'
+                  value={true}
+                  name='furniture'
+                  onChange={handleCmsValue}
+                />
+              </Wrapper>
               <input
-                type='number'
-                value={data.date}
-                name='date'
+                type='checkbox'
+                value={true}
+                name='furniture'
                 onChange={handleCmsValue}
               />
               <button className='cms-button'>Send Data</button>

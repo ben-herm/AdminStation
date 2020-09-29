@@ -29,10 +29,10 @@ const MobileNavbar = ({ showMenu }) => {
   return (
     <div style={{ display: showMenu ? 'flex' : null }} className='mobileNavbar'>
       <Link to='/'>Home</Link>
-      <Link to='/list'>Books List</Link>
-      {user && !user.isAdmin ? (
+      <Link to='/list'>Customer List</Link>
+      {/* {user && !user.isAdmin ? (
         <Link to='/history'>Purchase History</Link>
-      ) : null}
+      ) : null} */}
       {user && !user.isAdmin ? (
         <Link className='link-cart' to='/yourCart'>
           Cart
@@ -45,7 +45,7 @@ const MobileNavbar = ({ showMenu }) => {
         <span onClick={() => dispatch(showModal())}>Sign in</span>
       )}
 
-      {user && !user.isAdmin ? (
+      {/* {user && !user.isAdmin ? (
         <div className='cart'>
           <Link to='/yourCart'>
             <i className='fas fa-shopping-cart' />
@@ -56,7 +56,7 @@ const MobileNavbar = ({ showMenu }) => {
             ) : null}
           </Link>
         </div>
-      ) : null}
+      ) : null} */}
       {isAuthorized && (
         <span onClick={() => handleLogOut()}>
           <i className='fas fa-sign-out-alt'></i>

@@ -60,7 +60,7 @@ class BookList extends Component {
     }
     return (
       <div>
-        <h1>There are no books in the data base</h1>
+        <h1>There are no customers in the data base</h1>
       </div>
     )
   }

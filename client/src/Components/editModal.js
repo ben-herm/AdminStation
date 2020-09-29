@@ -83,7 +83,7 @@ const EditModal = ({ showUpdateBook, value }) => {
             <div className='close' onClick={() => showUpdateBook(false)}>
               <i className='far fa-times-circle'></i>
             </div>
-            <label>Author</label>
+            <label>כתובת</label>
             <input
               type='text'
               placeholder={item.author}
@@ -91,7 +91,7 @@ const EditModal = ({ showUpdateBook, value }) => {
               name='author'
               onChange={handleCmsValue}
             />
-            <label>Title</label>
+            <label>סוג נכס</label>
             <input
               type='text'
               placeholder={item.title}
@@ -110,14 +110,21 @@ const EditModal = ({ showUpdateBook, value }) => {
               name='pages'
               onChange={handleCmsValue}
             />
-            <label>Description</label>
+            <label>מחיר</label>
             <textarea
               name='desc'
               placeholder={item.desc}
               value={data.desc}
               onChange={handleCmsValue}
             ></textarea>
-            <label>Print</label>
+            <label>מחיר</label>
+            <textarea
+              name='desc'
+              placeholder={item.desc}
+              value={data.desc}
+              onChange={handleCmsValue}
+            ></textarea>
+            <label>חדרים</label>
             <input
               type='text'
               placeholder={item.print}
@@ -125,7 +132,7 @@ const EditModal = ({ showUpdateBook, value }) => {
               name='print'
               onChange={handleCmsValue}
             />
-            <label>Price</label>
+            <label>מ״ר</label>
             <input
               type='text'
               placeholder={item.price}
@@ -133,7 +140,7 @@ const EditModal = ({ showUpdateBook, value }) => {
               name='price'
               onChange={handleCmsValue}
             />
-            <label>Publishing date</label>
+            <label>קומה</label>
             <input
               type='text'
               placeholder={item.date}

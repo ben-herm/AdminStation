@@ -13,9 +13,9 @@ const EnterPage = () => {
   return (
     <div style={bgc} className='enterPage'>
       <div className='nav-page'>
-        <h1>Book Store</h1>
+        <h1>Admin Station</h1>
         <Link to='/list'>
-          <button className='welcome-btn'>Enter Book Store</button>
+          <button className='welcome-btn'>Enter Admin Area</button>
         </Link>
       </div>
     </div>
